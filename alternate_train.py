@@ -23,7 +23,7 @@ def default_loader(array_path):
 # training data path (H)   shape(784, 1)
 train_data_path = []
 for i in range(10000):
-    path = r'/home/XinyangLi/fashion_MNIST_GNN/dataset/generated_imgs/{}.npy'.format(i)
+    path = r'./dataset/generated_imgs/{}.npy'.format(i)
     train_data_path.append(path)
 
 
@@ -31,7 +31,7 @@ for i in range(10000):
 train_data_embedding = []
 for i in range(10000):
     embedding_array = np.load(
-    r"/home/XinyangLi/fashion_MNIST_GNN/dataset/generated_embeddings/{}.npy".format(i))
+    r"./dataset/generated_embeddings/{}.npy".format(i))
     embedding_tensor = torch.Tensor(embedding_array)
     train_data_embedding.append(embedding_tensor)
 
@@ -58,7 +58,7 @@ class TrainSet1(Dataset):
 test_data_embedding = []
 for it in range(5000):
     test_embedding_array = np.load(
-        '/home/XinyangLi/fashion_MNIST_GNN/dataset/fashion-mnist/images/test_data_embeddings/{}.npy'.format(it))
+        './dataset/fashion-mnist/images/test_data_embeddings/{}.npy'.format(it))
     test_embedding_tensor = torch.Tensor(test_embedding_array)
     test_data_embedding.append(test_embedding_tensor)
 
