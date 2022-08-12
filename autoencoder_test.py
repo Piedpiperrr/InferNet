@@ -20,7 +20,7 @@ mpl.use('Agg')
 test_data_embedding = []
 for it in range(1000):
     test_embedding_array = np.load(
-        '/home/XinyangLi/fashion_MNIST_GNN/dataset/fashion-mnist/images/test_data_embeddings/{}.npy'.format(it))
+        './dataset/fashion-mnist/images/test_data_embeddings/{}.npy'.format(it))
     test_embedding_tensor = torch.Tensor(test_embedding_array)
     test_data_embedding.append(test_embedding_tensor)
 
