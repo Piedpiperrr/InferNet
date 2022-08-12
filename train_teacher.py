@@ -51,7 +51,7 @@ class Net(torch.nn.Module):
 
 
 def main():
-    #前準備
+    # Preparation
     mnist_list = load_mnist_graph(data_size=data_size)
     device = torch.device('cuda')
     model = Net().to(device)
@@ -71,7 +71,7 @@ def main():
     
     best_acc = 0.0
     best_epoch = 0
-    #学習部分
+    # Learning part
     model.train()
     for epoch in range(epoch_num):
         train_loss = 0.0
@@ -123,7 +123,7 @@ def main():
 
     print('Finished Training')
 
-    #最終結果出力
+    # Final result
     #correct = 0
     #total = 0
     #with torch.no_grad():
