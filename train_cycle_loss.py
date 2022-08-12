@@ -22,14 +22,14 @@ def default_loader(array_path):
 # training data path (H)   shape(784, 1)
 train_data_path = []
 for i in range(10000):
-    path = r'/home/XinyangLi/fashion_MNIST_GNN/dataset/generated_imgs/{}.npy'.format(i)
+    path = r'./dataset/generated_imgs/{}.npy'.format(i)
     train_data_path.append(path)
 
 
 # train data embedding (E)    shape(784, 128)
 train_data_embedding = []
 for i in range(10000):
-    embedding_array = np.load(r"/home/XinyangLi/fashion_MNIST_GNN/dataset/generated_embeddings/{}.npy".format(i))
+    embedding_array = np.load(r"./dataset/generated_embeddings/{}.npy".format(i))
     embedding_tensor = torch.Tensor(embedding_array)
     train_data_embedding.append(embedding_tensor)
 
@@ -118,7 +118,7 @@ for epoch in range(200):
         optimizer.zero_grad()
         outputs = InferNet(emb)
         outputs = outputs.view(-1, 784, 1)
-        loss1 = criterion(outputs, feats)   # 重构损失
+        loss1 = criterion(outputs, feats)   # reconstruction loss
         loss_1 += loss1.item()
         x = torch.cat([batch_node_coordinates, outputs], 2)
         data_list = []
