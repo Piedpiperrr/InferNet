@@ -16,7 +16,7 @@ teacher.eval()
 def load_mnist_graph(data_size=5000):
     data_list = []
     labels = 0
-    with gzip.open('/home/XinyangLi/fashion_MNIST_GNN/dataset/fashion-mnist/raw/t10k-labels-idx1-ubyte.gz', 'rb') as f:
+    with gzip.open('./dataset/fashion-mnist/raw/t10k-labels-idx1-ubyte.gz', 'rb') as f:
         labels = np.frombuffer(f.read(), np.uint8, offset=8)
         labels = labels[0:5000]
         # print(labels.shape)      # (10000,)
