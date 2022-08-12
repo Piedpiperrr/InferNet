@@ -17,7 +17,7 @@ def default_loader(array_path):
 # test data path (H)   shape(784, 1)
 test_file_path = []
 for i in range(1000):
-    features_path = r"/home/XinyangLi/fashion_MNIST_GNN/dataset/fashion-mnist/images/test_data/{}.npy".format(i)
+    features_path = r"./dataset/fashion-mnist/images/test_data/{}.npy".format(i)
     test_file_path.append(features_path)
 
 
@@ -25,7 +25,7 @@ for i in range(1000):
 test_data_embedding = []
 for i in range(1000):
     embedding_array = np.load(
-        r"/home/XinyangLi/fashion_MNIST_GNN/dataset/fashion-mnist/images/test_data_embeddings/{}.npy".format(i))
+        r"./dataset/fashion-mnist/images/test_data_embeddings/{}.npy".format(i))
     embedding_tensor = torch.Tensor(embedding_array)
     test_data_embedding.append(embedding_tensor)
 
